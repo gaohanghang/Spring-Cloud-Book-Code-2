@@ -6,12 +6,15 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
+ * 检查端口是否可用
+ *
  * @author yinjihuan
  * @create 2017-11-21 15:48
  **/
 public class NetUtils {
-	
+
     /***
+     *  检查本地端口可用性
      *  true:already in using  false:not using
      * @param port
      */
@@ -23,8 +26,9 @@ public class NetUtils {
         }
         return flag;
     }
-    
+
     /***
+     *  检查远程端口可用性
      *  true:already in using  false:not using
      * @param host
      * @param port
@@ -42,5 +46,5 @@ public class NetUtils {
         }
         return flag;
     }
-    
+
 }

@@ -4,19 +4,19 @@ import de.codecentric.boot.admin.server.domain.entities.Instance;
 import de.codecentric.boot.admin.server.domain.entities.InstanceRepository;
 import de.codecentric.boot.admin.server.domain.events.InstanceEvent;
 import de.codecentric.boot.admin.server.notify.AbstractStatusChangeNotifier;
+import org.springframework.context.annotation.Bean;
 import reactor.core.publisher.Mono;
 import java.util.Map;
 
 /**
  * 服务监控钉钉通知
- * 
+ *
  * @author yinjihuan
- * 
+ *
  * @date 2018-10-11
- * 
+ *
  */
 public class DingDingNotifier extends AbstractStatusChangeNotifier {
-
 
     public DingDingNotifier(InstanceRepository repository) {
         super(repository);
@@ -28,7 +28,7 @@ public class DingDingNotifier extends AbstractStatusChangeNotifier {
     	String serviceUrl = instance.getRegistration().getServiceUrl();
     	String status = instance.getStatusInfo().getStatus();
     	Map<String, Object> details = instance.getStatusInfo().getDetails();
-    	
+
     	StringBuilder str = new StringBuilder();
     	str.append("【" + serviceName + "】");
     	str.append("【服务地址】" + serviceUrl);
