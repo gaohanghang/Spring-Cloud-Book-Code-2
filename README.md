@@ -3,6 +3,11 @@
 
 ###### Spring-Cloud-Book-Code-2目录的代码是第二版《Spring Cloud微服务 入门 实战与进阶》配套源码
 
+
+[springboot整合Mongodb](https://github.com/gaohanghang/Spring-Cloud-Book-Code-2/tree/master/Spring-Cloud-Book-Code-2/ch-17/mongodb)
+
+[springboot整合elasticsearch](https://github.com/gaohanghang/Spring-Cloud-Book-Code-2/tree/master/Spring-Cloud-Book-Code-2/ch-17/elasticsearch)
+
 ###### 购买链接：
 
 当当：http://product.m.dangdang.com/27884997.html
