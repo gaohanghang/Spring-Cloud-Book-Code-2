@@ -15,6 +15,14 @@ import org.springframework.web.context.request.ServletWebRequest;
 import com.cxytiandi.zuul_demo.base.ResponseCode;
 import com.cxytiandi.zuul_demo.base.ResponseData;
 
+/**
+ * 异常时返回统一的格式
+ *
+ * 和SpringBoot 统一异常处理不同
+ *
+ * @ControllerAdvice 注解主要用来针对 Controller 中的方法做处理，作用于
+ * @RequestMapping 标注的方法上，只对我们定义的接口异常有效，对 Zuul 中是无效的。
+ */
 @RestController
 public class ErrorHandlerController implements ErrorController {
 

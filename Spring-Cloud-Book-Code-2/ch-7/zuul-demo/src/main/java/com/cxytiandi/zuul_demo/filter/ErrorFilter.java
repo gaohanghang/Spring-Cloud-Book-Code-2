@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 
+/**
+ * 过滤器中的异常处理
+ */
 public class ErrorFilter extends ZuulFilter {
 
 	private Logger log = LoggerFactory.getLogger(ErrorFilter.class);

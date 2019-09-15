@@ -11,22 +11,23 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * Eureka服务端示列
- * 
+ *
  * @author yinjihuan
- * 
+ *
  * @about http://cxytiandi.com/about
- * 
+ *
  * @date 2018-12-22
- * 
+ *
  */
 @EnableEurekaServer
 @SpringBootApplication
 public class EurekaServerApplication {
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(EurekaServerApplication.class, args);
+		System.out.println("启动成功，访问地址: http://localhost:8761/");
 	}
-	
+
 	@Configuration
 	@EnableWebSecurity
 	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -38,5 +39,5 @@ public class EurekaServerApplication {
 	        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
 	    }
 	}
-	
+
 }

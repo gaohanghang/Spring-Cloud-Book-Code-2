@@ -20,8 +20,8 @@ public class IpFilter extends ZuulFilter {
 		super();
 	}
 
-	@Override     
-	public boolean shouldFilter() {              
+	@Override
+	public boolean shouldFilter() {
 	    return true;
 	}
 

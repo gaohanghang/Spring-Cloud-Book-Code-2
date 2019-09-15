@@ -8,13 +8,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * Feign示列
- * 
+ *
  * @author yinjihuan
- * 
+ *
  * @about http://cxytiandi.com/about
- * 
+ *
  * @date 2019-01-01
- * 
+ *
  */
 @EnableDiscoveryClient
 @EnableFeignClients
@@ -23,5 +23,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
+		//http://localhost:8086/actuator/hystrix.stream
+		//http://localhost:8086/callHello
 	}
 }

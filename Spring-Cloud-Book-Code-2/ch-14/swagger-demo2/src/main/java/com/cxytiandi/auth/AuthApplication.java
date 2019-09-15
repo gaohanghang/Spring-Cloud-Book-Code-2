@@ -12,5 +12,6 @@ import com.spring4all.swagger.EnableSwagger2Doc;
 public class AuthApplication {
 	public static void main(String[] args) {
 	    SpringApplication.run(AuthApplication.class, args);
+		System.out.println("http://localhost:8082/swagger-ui.html");
 	}
 }

@@ -5,7 +5,7 @@
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
 
     <!-- Example for logging into the build folder of your project -->
-    <property name="LOG_FILE" value="/Users/yinjihuan/Downloads/sleuth-user-service.log"/>​
+    <property name="LOG_FILE" value="/Users/gaohanghang/Downloads/sleuth-user-service.log"/>​
 
     <!-- You can override this to have a custom pattern -->
     <property name="CONSOLE_LOG_PATTERN"
@@ -71,7 +71,7 @@
     <root level="INFO">
         <appender-ref ref="console"/>
         <!-- uncomment this to have also JSON logs-->
-        <appender-ref ref="logstash"/> 
+        <appender-ref ref="logstash"/>
         <appender-ref ref="flatfile"/>
     </root>
 </configuration>

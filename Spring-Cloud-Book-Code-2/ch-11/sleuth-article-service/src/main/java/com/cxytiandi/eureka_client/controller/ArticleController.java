@@ -15,24 +15,25 @@ import brave.Tracer;
 public class ArticleController {
 
 	private Logger logger = LoggerFactory.getLogger(ArticleController.class);
-	
-	@Autowired 	
-	private RestTemplate restTemplate;  	
-	
+
+	@Autowired
+	private RestTemplate restTemplate;
+
 	@Autowired
 	private ArticleService articleService;
-	
-	@Autowired 
+
+	// 整个请求的唯一ID，它标识整个请求的链路
+	@Autowired
 	Tracer tracer;
-	
-	@GetMapping("/article/callHello") 	
-	public String callHello() { 		
+
+	@GetMapping("/article/callHello")
+	public String callHello() {
 		logger.info("我是/article/callHello");
 		tracer.currentSpan().tag("用户", "yinjihuan");
 		articleService.saveLog("test");
 		articleService.saveLog2("test");
 	    return restTemplate.getForObject(
-			"http://sleuth-user-service/user/hello", String.class); 	
+			"http://sleuth-user-service/user/hello", String.class);
 	}
-	
+
 }

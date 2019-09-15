@@ -24,6 +24,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	}
 
+	// spanId: 基本的工作单元，发起一次远程调用就是一个 span
 	@NewSpan(name = "saveLog2")
 	@Override
 	public void saveLog2(String log) {
@@ -33,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
 		} catch (Exception | Error e) {
 			//span.error(e);
 		} finally {
-			//span.finish(); 
+			//span.finish();
 		}
 	}
 
