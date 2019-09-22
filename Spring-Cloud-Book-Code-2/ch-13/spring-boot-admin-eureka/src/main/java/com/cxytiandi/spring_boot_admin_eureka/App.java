@@ -1,5 +1,6 @@
 package com.cxytiandi.spring_boot_admin_eureka;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -13,22 +14,24 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
 /**
  * Spring Boot Admin Web端示列
- * 
+ *
  * @author yinjihuan
- * 
+ *
  * @about http://cxytiandi.com/about
- * 
+ *
  * @date 2018-12-16
- * 
+ *
  */
 @EnableDiscoveryClient
 @EnableAdminServer
 @SpringBootApplication
+@Slf4j
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
+		log.info("启动成功: http://localhost:9091");
 	}
-	
+
 	@Configuration
 	public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {
 		private final String adminContextPath;

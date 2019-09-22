@@ -2,6 +2,7 @@ package com.cxytiandi.spring_boot_admin;
 
 import java.time.Duration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,21 +19,23 @@ import de.codecentric.boot.admin.server.notify.RemindingNotifier;
 
 /**
  * Spring Boot Admin Web端示列
- * 
+ *
  * @author yinjihuan
- * 
+ *
  * @about http://cxytiandi.com/about
- * 
+ *
  * @date 2018-12-16
- * 
+ *
  */
 @EnableAdminServer
 @SpringBootApplication
+@Slf4j
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
+		log.info("启动成功: http://localhost:9092");
 	}
-	
+
 	@Configuration
 	public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {
 		private final String adminContextPath;
@@ -59,12 +62,12 @@ public class App {
 					.and().csrf().disable();
 		}
 	}
-	
+
 	@Bean
 	public DingDingNotifier dingDingNotifier(InstanceRepository repository) {
 		return new DingDingNotifier(repository);
 	}
-	
+
 	@Primary
 	@Bean(initMethod = "start", destroyMethod = "stop")
 	public RemindingNotifier remindingNotifier(InstanceRepository repository) {
