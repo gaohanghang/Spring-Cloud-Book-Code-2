@@ -1,5 +1,9 @@
 # Spring Cloud 微服务入门、实战与进阶
 
+![](https://raw.githubusercontent.com/gaohanghang/images/master/img/20190925191737.png)
+
+> 豆瓣地址: https://book.douban.com/subject/34441728/
+
 ## 第1章　Spring Cloud 与微服务概述 2
 
 ## 第2章　实战前的准备工作 8
