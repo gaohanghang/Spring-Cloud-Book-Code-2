@@ -21,10 +21,18 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Redis配置
+ */
 @Configuration
 @EnableCaching
 public class RedisConfig {
 
+	/**
+	 * 配置 CacheManager 来设置缓存的过期时间
+	 * @param factory
+	 * @return
+	 */
 	@Bean
 	public CacheManager cacheManager(RedisConnectionFactory factory) {
 		RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
@@ -34,6 +42,9 @@ public class RedisConfig {
 		return RedisCacheManager.builder(factory).cacheDefaults(cacheConfiguration).build();
 	}
 
+	/*
+		配置 Key 的自动生成方式，这里是用类名 + 方法名 + 参数名来生成缓存的 Key，只用这样才能让 Key 具有唯一性。
+	 */
 	@Bean
 	public KeyGenerator keyGenerator() {
 		return new KeyGenerator() {
@@ -59,6 +70,9 @@ public class RedisConfig {
 		return redisTemplate;
 	}
 
+	/*
+		设置下序列化方式为 JSON，这样存在于 Redis 中的数据查看起来就比较方便了。
+	 */
 	private void setSerializer(RedisTemplate<String, String> template) {
 		Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
 		ObjectMapper om = new ObjectMapper();

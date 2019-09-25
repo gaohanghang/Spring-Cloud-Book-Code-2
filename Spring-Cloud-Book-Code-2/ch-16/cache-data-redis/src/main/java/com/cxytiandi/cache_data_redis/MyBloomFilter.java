@@ -9,7 +9,11 @@ public class MyBloomFilter {
 		// 总数量
 		int total = 1000000;
 		BloomFilter<CharSequence> bf = BloomFilter.create(Funnels.stringFunnel(Charsets.UTF_8), total);
-		// 初始化 10000 条数据到过滤器中
+		/*
+			布隆过滤器存在一定的错误率，我们可以调节布隆过滤器的错误率，在create的时候指定第 3 个参数来指定错误率
+		 */
+		//BloomFilter<CharSequence> bf = BloomFilter.create(Funnels.stringFunnel(Charsets.UTF_8), total, 0.0003);
+		// 初始化 1000000 条数据到过滤器中
 		for (int i = 0; i < total; i++) {
 			bf.put("" + i);
 		}

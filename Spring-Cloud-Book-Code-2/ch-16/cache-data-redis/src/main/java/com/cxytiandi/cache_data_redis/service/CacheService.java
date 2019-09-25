@@ -2,10 +2,13 @@ package com.cxytiandi.cache_data_redis.service;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 缓存接口定义
+ */
 public interface CacheService {
 	/**
 	 * 设置缓存
-	 * 
+	 *
 	 * @param key      缓存 KEY
 	 * @param value    缓存值
 	 * @param timeout  缓存过期时间
@@ -15,7 +18,7 @@ public interface CacheService {
 
 	/**
 	 * 获取缓存
-	 * 
+	 *
 	 * @param key 缓 存 KEY
 	 * @return
 	 */
@@ -27,7 +30,7 @@ public interface CacheService {
 
 	/**
 	 * 删除缓存
-	 * 
+	 *
 	 * @param key 缓 存 KEY
 	 */
 	public void deleteCache(String key);
