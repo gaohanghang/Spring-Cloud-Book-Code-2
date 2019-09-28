@@ -20,7 +20,13 @@
 
 ## 第8章　API 网关之Spring Cloud Gateway 130
 
+## 第12章 微服务之间调用的安全认证
 
+### 12.1 什么是 JWT
+
+JWT 由三部分构成，第一部分称为头部（Header），第二部称为消息体（Payload），第三部分是签名（Signature）。一个 JWT 生成的 Token 格式为:
+
+token = encodeBase64(header) + '.' + encodeBase64(payload) + '.' + encodeBase64(signature)
 
 ## 第13章 Spring Boot Admin
 
