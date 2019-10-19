@@ -28,6 +28,44 @@ JWT 由三部分构成，第一部分称为头部（Header），第二部称为�
 
 token = encodeBase64(header) + '.' + encodeBase64(payload) + '.' + encodeBase64(signature)
 
+头部的信息通常由两部分内容组成，令牌的类型和使用的签名算法，比如下面的代码：
+
+{ "alg": "HS256", "typ": "JWT" }
+
+消息体中可以携带一些你想、需要的信息，比如用户 ID。因为你得知道这个 Token 是哪个用户的，比如下面的代码：
+
+{ "id": "1234567890", "name": "John Doe", "admin": true }
+
+签名是用来判断消息在传递的路上是否被篡改，从而保证数据的安全性，格式如下：
+
+HMACSHA256( base64URLEncode(header) + "." + base64URLEncode(payload),  secret)
+
+通过这三部分就组成了我们的 Json Web Token。
+
+### 12.2 创建统一的认证服务
+
+#### 12.2.1 表结构
+
+#### 12.2.2 JWT 工具类封装
+
+jjwt
+
+用工具类进行认证主要有以下几个方法：
+
+- 生成 Token。
+
+- 检查 Token 是否合法。
+
+- 刷新 RSA 公钥以及私钥。
+
+生成 Token 是在进行用户身份认证之后，通过用户的 ID 来生成一个 Token ，这个 Token 采用 RSA 加密的方式进行加密，Token 的内容包括用户的ID和过期时间。
+
+检查 Token 则是根据调用方带来的 Token 检查是否为合法用户，就是对 Token 进行解密操作，能解密并且在有效期内表示合法，合法则返回用户 ID。
+
+刷新 RSA 公钥及私钥的作用是防止公钥、私钥泄漏，公钥、私钥一般是写死的，不过我们可以做成配置的。集成配置管理中心后，可以对公钥、私钥进行动态修改，修改之后需要重新初始化公钥、私钥的对象信息。
+
+
+
 ## 第13章 Spring Boot Admin
 
 ## 第14章 Swagger
@@ -41,3 +79,21 @@ token = encodeBase64(header) + '.' + encodeBase64(payload) + '.' + encodeBase64(
 ### 16.3 防止缓存穿透方案
 
 ### 16.4 防止缓存雪崩方案
+
+## 第17章 微服务之存储
+
+### 17.1 存储选型
+
+业务数据用 MySQL
+
+搜索服务用 Elasticsearch 来构建
+
+大数据量的基础数据，采用 Mongodb 存储
+
+缓存用 Redis
+
+### 17.2 Mongodb
+
+### 
+
+
