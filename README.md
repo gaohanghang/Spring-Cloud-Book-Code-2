@@ -99,4 +99,17 @@ jjwt
 ### 17.4 Elasticsearch
 
 
+## 第18章 微服务之分布式事务解决方案
+
+![](https://raw.githubusercontent.com/gaohanghang/images/master/img/20191024200509.png)
+
+### 18.1 两阶段型
+
+### 18.2 TCC 补偿型（不推荐）
+
+### 18.3 最终一致性
+
+### 18.4 最大努力通知型事务
+
+
 
