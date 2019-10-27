@@ -8,6 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>transaction-mq</name>
+	<description>可靠性消息服务</description>
 	<url>http://maven.apache.org</url>
 
 	<properties>
