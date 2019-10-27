@@ -8,6 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>transaction-mq-client</name>
+	<description>客户端</description>
 	<url>http://maven.apache.org</url>
 
 	<properties>

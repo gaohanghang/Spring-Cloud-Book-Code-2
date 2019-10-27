@@ -8,6 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>transaction-mq-task</name>
+	<description>消息发送系统</description>
 	<url>http://maven.apache.org</url>
 
 	<properties>
