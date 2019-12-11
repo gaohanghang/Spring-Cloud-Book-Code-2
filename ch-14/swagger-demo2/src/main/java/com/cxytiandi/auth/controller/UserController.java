@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@Api(tags={"用户接口"})
+@Api(tags={" 用户接口 "})
 @RestController
 public class UserController {
 
@@ -29,7 +29,7 @@ public class UserController {
 	public UserDto getUser(@RequestParam("id")String id) {
 		return new UserDto();
 	}
-	
+
 	@ApiOperation(value = "新增用户")
 	@ApiResponses({ @ApiResponse(code = 200, message = "OK", response = UserDto.class) })
 	@PostMapping("/user")
@@ -37,5 +37,5 @@ public class UserController {
 		System.err.println(param.getName());
 		return new UserDto();
 	}
-	
+
 }
